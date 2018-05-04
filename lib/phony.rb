@@ -20,47 +20,47 @@ require File.expand_path '../phony/dsl', __FILE__
 #
 # The ones that need more space to define.
 #
-require File.expand_path '../phony/countries/austria', __FILE__
-require File.expand_path '../phony/countries/bangladesh', __FILE__
-require File.expand_path '../phony/countries/belarus', __FILE__
-require File.expand_path '../phony/countries/brazil', __FILE__
-require File.expand_path '../phony/countries/cambodia', __FILE__
-require File.expand_path '../phony/countries/croatia', __FILE__
-require File.expand_path '../phony/countries/china', __FILE__
-require File.expand_path '../phony/countries/georgia', __FILE__
-require File.expand_path '../phony/countries/germany', __FILE__
-require File.expand_path '../phony/countries/guinea', __FILE__
-require File.expand_path '../phony/countries/india', __FILE__
-require File.expand_path '../phony/countries/indonesia', __FILE__
-require File.expand_path '../phony/countries/ireland', __FILE__
-require File.expand_path '../phony/countries/italy', __FILE__
-require File.expand_path '../phony/countries/japan', __FILE__
-require File.expand_path '../phony/countries/kyrgyzstan', __FILE__
-require File.expand_path '../phony/countries/latvia', __FILE__
-require File.expand_path '../phony/countries/libya', __FILE__
-require File.expand_path '../phony/countries/malaysia', __FILE__
-require File.expand_path '../phony/countries/moldova', __FILE__
-require File.expand_path '../phony/countries/montenegro', __FILE__
-require File.expand_path '../phony/countries/myanmar', __FILE__
-require File.expand_path '../phony/countries/namibia', __FILE__
-require File.expand_path '../phony/countries/nepal', __FILE__
-require File.expand_path '../phony/countries/netherlands', __FILE__
-require File.expand_path '../phony/countries/pakistan', __FILE__
-require File.expand_path '../phony/countries/paraguay', __FILE__
-require File.expand_path '../phony/countries/russia_kazakhstan_abkhasia_south_ossetia', __FILE__
-require File.expand_path '../phony/countries/saudi_arabia', __FILE__
-require File.expand_path '../phony/countries/serbia', __FILE__
-require File.expand_path '../phony/countries/somalia', __FILE__
-require File.expand_path '../phony/countries/south_korea', __FILE__
-require File.expand_path '../phony/countries/sweden', __FILE__
-require File.expand_path '../phony/countries/taiwan', __FILE__
-require File.expand_path '../phony/countries/tajikistan', __FILE__
-require File.expand_path '../phony/countries/turkmenistan', __FILE__
-require File.expand_path '../phony/countries/vietnam', __FILE__
-require File.expand_path '../phony/countries/ukraine', __FILE__
-require File.expand_path '../phony/countries/united_kingdom', __FILE__
-require File.expand_path '../phony/countries/uruguay', __FILE__
-require File.expand_path '../phony/countries/zimbabwe', __FILE__
+# require File.expand_path '../phony/countries/austria', __FILE__
+# require File.expand_path '../phony/countries/bangladesh', __FILE__
+# require File.expand_path '../phony/countries/belarus', __FILE__
+# require File.expand_path '../phony/countries/brazil', __FILE__
+# require File.expand_path '../phony/countries/cambodia', __FILE__
+# require File.expand_path '../phony/countries/croatia', __FILE__
+# require File.expand_path '../phony/countries/china', __FILE__
+# require File.expand_path '../phony/countries/georgia', __FILE__
+# require File.expand_path '../phony/countries/germany', __FILE__
+# require File.expand_path '../phony/countries/guinea', __FILE__
+# require File.expand_path '../phony/countries/india', __FILE__
+# require File.expand_path '../phony/countries/indonesia', __FILE__
+# require File.expand_path '../phony/countries/ireland', __FILE__
+# require File.expand_path '../phony/countries/italy', __FILE__
+# require File.expand_path '../phony/countries/japan', __FILE__
+# require File.expand_path '../phony/countries/kyrgyzstan', __FILE__
+# require File.expand_path '../phony/countries/latvia', __FILE__
+# require File.expand_path '../phony/countries/libya', __FILE__
+# require File.expand_path '../phony/countries/malaysia', __FILE__
+# require File.expand_path '../phony/countries/moldova', __FILE__
+# require File.expand_path '../phony/countries/montenegro', __FILE__
+# require File.expand_path '../phony/countries/myanmar', __FILE__
+# require File.expand_path '../phony/countries/namibia', __FILE__
+# require File.expand_path '../phony/countries/nepal', __FILE__
+# require File.expand_path '../phony/countries/netherlands', __FILE__
+# require File.expand_path '../phony/countries/pakistan', __FILE__
+# require File.expand_path '../phony/countries/paraguay', __FILE__
+# require File.expand_path '../phony/countries/russia_kazakhstan_abkhasia_south_ossetia', __FILE__
+# require File.expand_path '../phony/countries/saudi_arabia', __FILE__
+# require File.expand_path '../phony/countries/serbia', __FILE__
+# require File.expand_path '../phony/countries/somalia', __FILE__
+# require File.expand_path '../phony/countries/south_korea', __FILE__
+# require File.expand_path '../phony/countries/sweden', __FILE__
+# require File.expand_path '../phony/countries/taiwan', __FILE__
+# require File.expand_path '../phony/countries/tajikistan', __FILE__
+# require File.expand_path '../phony/countries/turkmenistan', __FILE__
+# require File.expand_path '../phony/countries/vietnam', __FILE__
+# require File.expand_path '../phony/countries/ukraine', __FILE__
+# require File.expand_path '../phony/countries/united_kingdom', __FILE__
+# require File.expand_path '../phony/countries/uruguay', __FILE__
+# require File.expand_path '../phony/countries/zimbabwe', __FILE__
 
 # All other countries.
 #
@@ -81,7 +81,7 @@ module Phony
       super %Q{Phony could not normalize the given number. Is it a phone number?}
     end
   end
-  
+
   # Raised in case Phony can't split a given number.
   #
   # @example
@@ -92,7 +92,7 @@ module Phony
       super %Q{Phony could not split the given number. Is #{number.blank? ? 'it' : number.inspect} a phone number?}
     end
   end
-  
+
   # Raised in case Phony can't format a given number.
   #
   # @example
@@ -143,7 +143,7 @@ module Phony
     #
     def normalize phone_number, options = {}
       raise ArgumentError, "Phone number cannot be nil. Use e.g. number && Phony.normalize(number)." unless phone_number
-      
+
       normalize! phone_number.dup, options
     end
     # A destructive version of {#normalize}.
@@ -185,7 +185,7 @@ module Phony
     #
     def split phone_number
       raise ArgumentError, "Phone number cannot be nil. Use e.g. number && Phony.split(number)." unless phone_number
-      
+
       split! phone_number.dup, phone_number
     end
     # A destructive version of {#split}.
